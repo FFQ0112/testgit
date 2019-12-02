@@ -1,2 +1,104 @@
-欢迎光临
-微信小程序
+（1在app.json中）
+{
+"pages":[
+"pages/index/index",
+"pages /me/me",
+"pages/detail/detail"
+],
+"window":{
+"backgroundTextStyle":"light",
+"navigationBarTextStyle":"white"
+},
+"tabBar":{
+"selectedColor":"#D53C3E",
+"bordgroundStyle":"black",
+"backgroundColor":"#F9F9F9",
+"list":[{
+"pagePath":"pages/index/index",
+"text":"首页",
+"iconPath":"../images/bar/index-1.jpg"
+},{
+"pagePath":"pages/me/me",
+"text":"我的",
+"iconPath":"../images/bar/me-0.jpg",
+"selectedIconPath":"../images/bar/me-1jpg"
+}]
+}
+}
+（2进入pages/index/index.js文件，添加查看详情绑定时间seeDetail）
+Page({
+data:{
+currentTab:0,
+flag:0
+},
+switchNav:function(e){
+console.log(e);
+var page = this;
+var id = e.target.id;
+if(this.data.currentTab == id){
+return false;
+}else{
+page.setData({currentTab:id});
+}
+page.setData({flag:id});
+},
+seeDetail:function(){
+wx.navigateTo({
+url: '../detail/detail'
+})
+}
+})
+(3进入pages/detail/detail.wxml文件)
+<view class="content">
+<view class="title">开红包哪家强？阿里最壕，腾讯像春运</view>
+<view class="desc">
+<view class="publish">
+<view>
+<image src="../../images/icon/zqkj.png" style="width:36px;height:36px;"></image>
+</view>
+<view class="company">
+<view>志趣科技</view>
+<view class="attr">
+<text class="mark">原创</text>
+<text class="time">02-05 21:07<text>
+</view>
+</view>
+</view>
+<view class="btn">
+<image src="../../images/icon/operate.jpg" style="width:70px;height:27px;"></image>
+</view>
+</view>
+<view class="article">
+<view>
+明天就正月初十了，基本上能各大公司也都开工了，而一些大公司新年开工，居然还会发放开工红包！为什么我们公司没有？
+</view>
+<view>
+各大老板为了鼓励员工开年好好干活，纷纷发放开工红包，那么究竟那家最强？
+</view>
+<view>
+作为最有钱的阿里，发的红包自然也是最大的，居然有员工领到了12888元的超级大红包，羡慕死别人啊！
+</view>
+<view>
+另一家腾讯公司更是人山人海，抢红包的场面堪比春运，更有男女员工穿着高跟鞋爬了40楼就是为了抢一个红包，这也是够拼的。
+</view>
+<view>
+魅族今年老板亲自为员工发红包，排队的员工都能绕魅族大楼三圈了。
+</view>
+</view>
+</view>
+(进入pages/detail/detail,wxss文件)
+.title{
+margin: 10px;
+font-size: 25px;
+font-weight: blod;
+}
+.desc{
+margin: 10px;
+display: flex;
+flex-direction: row;
+}
+.publish{
+display: flex;
+flex-direction: row;
+width: 90%;
+}
