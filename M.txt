@@ -25,6 +25,9 @@
 }]
 }
 }
+
+
+
 （2进入pages/index/index.js文件，添加查看详情绑定时间seeDetail）
 Page({
 data:{
@@ -48,6 +51,9 @@ url: '../detail/detail'
 })
 }
 })
+
+
+
 (3进入pages/detail/detail.wxml文件)
 <view class="content">
 <view class="title">开红包哪家强？阿里最壕，腾讯像春运</view>
@@ -76,7 +82,7 @@ url: '../detail/detail'
 各大老板为了鼓励员工开年好好干活，纷纷发放开工红包，那么究竟那家最强？
 </view>
 <view>
-作为最有钱的阿里，发的红包自然也是最大的，居然有员工领到了12888元的超级大红包，羡慕死别人啊！
+作为最有钱的阿里，发的红包自然也是虽大的居然有员工领到了12888元的超级大红包，羡慕死被人啊！
 </view>
 <view>
 另一家腾讯公司更是人山人海，抢红包的场面堪比春运，更有男女员工穿着高跟鞋爬了40楼就是为了抢一个红包，这也是够拼的。
@@ -86,7 +92,10 @@ url: '../detail/detail'
 </view>
 </view>
 </view>
-(进入pages/detail/detail,wxss文件)
+
+
+
+(4进入pages/detail/detail,wxss文件)
 .title{
 margin: 10px;
 font-size: 25px;
@@ -101,4 +110,140 @@ flex-direction: row;
 display: flex;
 flex-direction: row;
 width: 90%;
+}
+.company{
+margin-left: 10px;
+}
+.mark{
+border: 1px solid #cccccc;
+width: 25px;
+font-size: 11px;
+border-radius: 5px;
+}
+.time{
+font-size: 14px;
+margin-left: 5px;
+color: #999999;
+}
+.btn{
+line-height: 60px;
+}
+.article{
+font-size: 16px;
+line-height: 30px;
+padding: 10px;
+}
+
+
+
+(5进入pages/detail/detail.wxml文件)
+<view class="content">
+<view class="title">开工发红包哪家强，阿里最壕，腾讯像春运</view>
+<view class="desc">
+<view class="publish">
+<view>
+<image src="../../images/icon/zqkj.png" style="width: 36px;height: 36px;"></image>
+</view>
+<view class="company">
+<view>志趣科技</view>
+<view class="attr">
+<text class="mark">原创</text>
+<text class="time">02-05 21:07</text>
+</view>
+</view>
+</view>
+<view class="btn">
+<image src="../../images/icon/operate.jpg" style="width:70px;height:27px;"></image>
+</view>
+</view>
+<view class="article">
+<view>
+  明天就是正月初十了，基本上各大公司也都开工了，而一些大公司新年开工，居然还会发开工红包！为什么我们公司没有？
+</view>
+<view>
+  各大老板为鼓励员工开年好好干活，纷纷发放开工红包，那究竟哪家最强？
+</view>
+<view>
+作为最有钱的阿里，发的红包自然也是虽大的居然有员工领到了12888元的超级大红包，羡慕死被人啊！
+</view>
+<view>
+另一家腾讯公司更是人山人海，抢红包的场面堪比春运，更有男女员工穿着高跟鞋爬了40楼就是为了抢一个红包，这也是够拼的。
+</view>
+<view>
+魅族今年老板亲自为员工发红包，排队的员工都能绕魅族大楼三圈了。
+</view>
+</view>
+<view class="comment">
+<view class="write"><input type="text" placeholder="写评论..."/></view>
+<view class="opr">
+<image src="../../images/icon/pinglun.jpg" style="width:31px;height:26px;"></image>
+<image src="../../images/icon/shoucang-1.jpg" style="width:31px;height:26px;"></image>
+<imagw src="../../images/icon/fenxiang.jpg" style="width:31px;height:26px;"></image>
+</view>
+</view>
+</view>
+
+
+
+(6进入pages/detail/detail.wxss文件)
+.title{
+margin: 10px;
+font-size: 25px;
+font-weight: bold;
+}
+.desc{
+margin: 10px;
+display: flex;
+flex-direction: row;
+}
+.publish{
+display: flex;
+flex-direction: row;
+width: 90%;
+}
+.company{
+margin-left: 10px;
+}
+.mark{
+border: 1px solid #cccccc;
+width: 25px;
+font-size: 11px;
+border-radius: 5px;
+}
+.time{
+font-size: 14px;
+margin-left: 5px;
+color: #999999;
+}
+.btn{
+line-height: 60px;
+}
+.article{
+font-size: 16px;
+line-height: 30px;
+padding: 10px;
+}
+.comment{
+width: 100%;
+height: 42px;
+background-color: #F4F5F7;
+position: fixed;
+bottom: 0px;
+display: fledx;
+flex-direction: row;
+align-item: center;
+}
+.write{
+width: 50%;
+border: 1px solid #ffffff;
+margin-left: 10px;
+background-color: #ffffff;
+border-radius: 15px;
+font-size: 13px;
+}
+.write{
+margin-left: 10px;
+}
+.opr image{
+margin-left: 20px;
 }
